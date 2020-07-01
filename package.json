@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "gsap": "^3.3.4",
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.13.0",
+    "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.0.0"
