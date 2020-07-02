@@ -3,8 +3,62 @@
     <debug-info v-bind:enableTailwindcss="true" v-if="isNotProduction" />
     <button-scroll-to-top v-bind:showButton="vueScrollto.showScrollToTopButton" />
 
+    <header class="fixed z-10 w-full" ref="headerElm">
+      <div class="bg-gray-500 h-18 bg-opacity-0" v-bind:class="{ 'bg-opacity-75': opacityHeader }">
+        <scrollactive
+          ref="scrollactive"
+          v-bind:offset="vueScrollactive.offset"
+          v-bind:always-track="vueScrollactive.alwaysTrack"
+          v-bind:duration="vueScrollactive.duration"
+          v-bind:click-to-scroll="vueScrollactive.clickToScroll"
+          v-bind:bezier-easing-value="vueScrollactive.easing"
+        >
+          <ul class="flex flex-wrap justify-end pt-2 lg:pt-1">
+            <li v-if="opacityHeader" class="w-full mr-auto lg:w-auto">
+              <div class="flex justify-end">
+                <li class="mr-auto">
+                <a
+                  v-scroll-to="'body'"
+                  class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
+                  v-on:click="scrollToTop"
+                  v-if="vueScrollto.showScrollToTopButton"
+                >
+                  {{ site_name }}
+                </a>
+                </li>
+                <li class="sm:hidden" v-if="opacityHeader">
+                  <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
+                </li>
+                <li class="sm:hidden" v-if="opacityHeader">
+                  <iconlink-facebook pageid="gorillakitchen.jp" v-bind:opacityHeader="opacityHeader" />
+                </li>
+              </div>
+            </li>
+            <li>
+              <header-textlink name="INFO" href="#info" v-bind:opacityHeader="opacityHeader" />
+            </li>
+            <li>
+              <header-textlink name="ACCESS" href="#access" v-bind:opacityHeader="opacityHeader" />
+            </li>
+            <li>
+              <header-textlink name="MENU" href="#menus" v-bind:opacityHeader="opacityHeader" />
+            </li>
+            <li>
+              <header-textlink name="COUPON" href="#coupons" v-bind:opacityHeader="opacityHeader" />
+            </li>
+            <li class="hidden sm:inline-block">
+              <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
+            </li>
+            <li class="hidden sm:inline-block">
+              <iconlink-facebook pageid="gorillakitchen.jp" v-bind:opacityHeader="opacityHeader" />
+            </li>
+          </ul>
+        </scrollactive>
+      </div>
+    </header>
+
     <section class="relative h-screen">
-      <div class="w-full h-screen bg-center bg-cover hero-bg-img">
+      <div class="w-full h-screen bg-center bg-cover hero-bg-img" ref="heroElm">
         <div class="absolute w-full h-screen bg-black bg-opacity-25"></div>
         <h1 class="absolute w-full text-6xl font-bold text-center text-white hero-cover xl:text-7xl">
           {{ site_name }}
@@ -106,6 +160,15 @@ export default {
       vueScrollto: {
         showScrollToTopButton: false,
       },
+      vueScrollactive: {
+        alwaysTrack: false,
+        duration: 600,
+        clickToScroll: true,
+        offset: 0,
+        easing: '.5,0,.35,1',
+      },
+      opacityHeader: false,
+      opacityHeaderHeight: 0,
     }
   },
   head () {
@@ -128,8 +191,12 @@ export default {
   },
   mounted: function() {
     this.setScrollTrigger();
+    this.getHeight();
     this.isNotProduction = (window.location.hostname != this.site_domain)
     window.addEventListener('scroll', this.calculateScrollY);
+  },
+  updated: function() {
+    this.getHeight();
   },
   beforeDestroy: function() {
     window.removeEventListener('scroll', this.calculateScrollY);
@@ -191,6 +258,21 @@ export default {
       } else {
         this.vueScrollto.showScrollToTopButton = false
       }
+
+      if (this.scrollY > this.opacityHeaderHeight) {
+        this.opacityHeader = true
+      } else {
+        this.opacityHeader = false
+      }
+    },
+    getHeight() {
+      this.vueScrollactive.offset = this.$refs.headerElm.clientHeight;
+      this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
+    },
+    scrollToTop() {
+      if (location.hash.length > 0) {
+        history.pushState(null, null, location.pathname);
+      }
     },
   },
 }
@@ -212,5 +294,10 @@ export default {
 
 .aspect-16x9 {
   padding-bottom: 56.25%;
+}
+
+/* vue-scrollactive */
+.is-active {
+  text-decoration: underline;
 }
 </style>
