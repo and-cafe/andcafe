@@ -24,6 +24,7 @@ export default {
       site_kana: site_kana,
       site_domain: 'example.com',
       isNotProduction: false,
+      description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。',
     }
   },
   head () {
@@ -32,6 +33,16 @@ export default {
         lang: 'ja'
       },
       title: this.site_name + ' | ' + this.site_kana,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:site_name', property: 'og:site_name', content: this.site_name },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: 'https://' + this.site_domain + '/' },
+        { hid: 'og:title', property: 'og:title', content: this.site_name + ' | ' + this.site_kana },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/logo.jpg' },
+        { name: 'twitter:card', content: 'summary' },
+      ],
     }
   },
   mounted: function() {
