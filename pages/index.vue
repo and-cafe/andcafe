@@ -1,6 +1,7 @@
 <template>
   <div>
     <debug-info v-bind:enableTailwindcss="true" v-if="isNotProduction" />
+    <button-scroll-to-top v-bind:showButton="vueScrollto.showScrollToTopButton" />
 
     <section class="relative h-screen">
       <div class="w-full h-screen bg-center bg-cover hero-bg-img">
@@ -102,6 +103,9 @@ export default {
       instagram_id: 'and.018',
       isNotProduction: false,
       description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。',
+      vueScrollto: {
+        showScrollToTopButton: false,
+      },
     }
   },
   head () {
@@ -125,6 +129,10 @@ export default {
   mounted: function() {
     this.setScrollTrigger();
     this.isNotProduction = (window.location.hostname != this.site_domain)
+    window.addEventListener('scroll', this.calculateScrollY);
+  },
+  beforeDestroy: function() {
+    window.removeEventListener('scroll', this.calculateScrollY);
   },
   methods: {
     setScrollTrigger() {
@@ -175,6 +183,14 @@ export default {
           toggleActions: "restart none none none"
         }
       });
+    },
+    calculateScrollY() {
+      this.scrollY = window.scrollY;
+      if (this.scrollY > 200) {
+        this.vueScrollto.showScrollToTopButton = true
+      } else {
+        this.vueScrollto.showScrollToTopButton = false
+      }
     },
   },
 }
