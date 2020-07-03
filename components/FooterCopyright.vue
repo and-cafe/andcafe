@@ -2,7 +2,7 @@
   <!--
   <footer class="h-auto p-4 mx-auto mb-16 text-center md:mb-0 xl:max-w-screen-xl">
   -->
-  <footer class="h-auto p-4 mx-auto mb-16 text-center xl:max-w-screen-xl">
+  <footer class="h-auto p-4 mx-auto mb-16 text-center xl:max-w-screen-xl" id="footer">
     &copy; {{ name }}
     <span class="text-xs" v-if="showPoweredBy">Powered by <a href="https://izumi.love/" target="_blank" rel="noopener">イズミラヴ</a></span>
   </footer>

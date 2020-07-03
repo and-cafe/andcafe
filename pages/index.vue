@@ -3,7 +3,7 @@
     <debug-info v-bind:enableTailwindcss="true" v-if="isNotProduction" />
     <button-scroll-to-top v-bind:showButton="vueScrollto.showScrollToTopButton" />
 
-    <header class="fixed z-10 w-full" ref="headerElm">
+    <header class="fixed z-10 w-full" ref="headerElm" id="header">
       <div class="bg-gray-500 h-18 bg-opacity-0" v-bind:class="{ 'bg-opacity-75': opacityHeader }">
         <scrollactive
           ref="scrollactive"
@@ -17,14 +17,13 @@
             <li v-if="opacityHeader" class="w-full mr-auto lg:w-auto">
               <div class="flex justify-end">
                 <li class="mr-auto">
-                <a
-                  v-scroll-to="'body'"
-                  class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-                  v-on:click="scrollToTop"
-                  v-if="vueScrollto.showScrollToTopButton"
-                >
-                  {{ site_name }}
-                </a>
+                  <a
+                    v-scroll-to="'body'"
+                    class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
+                    v-on:click="scrollToTop"
+                  >
+                    {{ site_name }}
+                  </a>
                 </li>
                 <li class="sm:hidden" v-if="opacityHeader">
                   <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
@@ -60,7 +59,7 @@
     <section class="relative h-screen">
       <div class="w-full h-screen bg-center bg-cover hero-bg-img" ref="heroElm">
         <div class="absolute w-full h-screen bg-black bg-opacity-25"></div>
-        <h1 class="absolute w-full text-6xl font-bold text-center text-white hero-cover xl:text-7xl">
+        <h1 class="absolute w-full text-6xl font-bold text-center text-white hero-cover xl:text-7xl" id="site_name">
           {{ site_name }}
         </h1>
       </div>
@@ -205,6 +204,23 @@ export default {
     setScrollTrigger() {
       gsap.registerPlugin(ScrollTrigger);
 
+      gsap.from("#header", {
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#header",
+          toggleActions: "restart none none none"
+        }
+      });
+      gsap.from("#site_name", {
+        y: 30,
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#site_name",
+          toggleActions: "restart none none none"
+        }
+      });
       gsap.from("#info", {
         y: 30,
         duration: 2,
@@ -247,6 +263,14 @@ export default {
         opacity: 0,
         scrollTrigger: {
           trigger: "#coupons",
+          toggleActions: "restart none none none"
+        }
+      });
+      gsap.from("#footer", {
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#footer",
           toggleActions: "restart none none none"
         }
       });
