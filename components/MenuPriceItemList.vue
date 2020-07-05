@@ -26,7 +26,7 @@ export default {
       required: true,
     },
     menuData: {
-      type: Array,
+      type: Object,
       required: true,
     },
     comment: {
