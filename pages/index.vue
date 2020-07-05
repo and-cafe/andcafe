@@ -142,9 +142,27 @@
 
       <section id="coupons" class="h-screen p-2 lg:p-8">
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">COUPONS</h2>
-      </section>
 
-      <footer-copyright v-bind:name="site_name" />
+        <div class="flex flex-col justify-center lg:flex-row">
+          <card-coupon
+            annotation="【移転オープン記念】"
+            title="トッピング1つ無料クーポン"
+            note="ドリンクをご注文いただいた際にご利用いただけます。
+他のクーポンとの併用はできません。"
+            period="オープン日から2020年8月末まで"
+          />
+          <card-coupon
+            annotation="【移転オープン記念】【平日限定】"
+            title="￥100割引クーポン"
+            note="ドリンクをご注文いただいた際にご利用いただけます。
+他のクーポンとの併用はできません。
+土日祝はご利用いただけません。"
+            period="オープン日から2020年8月末まで"
+          />
+        </div>
+
+        <footer-copyright v-bind:name="site_name" />
+      </section>
     </main>
 
   </div>
