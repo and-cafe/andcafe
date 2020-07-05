@@ -9,7 +9,8 @@
             {{ annotation }}
           </p>
           <div class="mb-2 text-xl font-bold text-gray-900">{{ title }}</div>
-          <p class="text-sm text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">{{ note }}</p>
+          <p class="text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">※ご利用条件</p>
+          <p class="text-xs text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">{{ note }}</p>
         </div>
         <div class="flex items-center">
           <!--
