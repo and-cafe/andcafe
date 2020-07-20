@@ -191,7 +191,7 @@ export default {
       site_domain: 'andcafe.shop',
       instagram_id: 'and.018',
       isNotProduction: false,
-      description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。',
+      description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。タピオカドリンクやフラッペ・シェイクなどをテイクアウトで販売しています。',
       vueScrollto: {
         showScrollToTopButton: false,
       },
