@@ -101,15 +101,25 @@
             <dl class="flex flex-wrap m-4">
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">住所</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
-                <div>鹿児島県出水市高尾野町大久保3758</div>
-                <a href="https://g.page/gorillakitchen-jp?gm" target="_blank" rel="noopener" class="button--grey">地図を開く</a>
+                <div>鹿児島県出水市高尾野町大久保3756</div>
+                <div class="text-sm">※サウンドロケットさんの隣です。</div>
+                <a
+                  href="https://www.google.com/maps?q=出水市高尾野町大久保3756"
+                  target="_blank"
+                  rel="noopener"
+                  class="button--grey"
+                >地図を開く</a>
+              </dd>
+              <dt class="w-1/3 mb-2 font-bold md:w-1/4">駐車場</dt>
+              <dd class="w-2/3 mb-2 md:w-3/4">
+                あり
               </dd>
             </dl>
           </div>
 
           <div class="bg-gray-500 col-span-1 lg:col-span-2">
             <div class="relative h-0 overflow-hidden bg-gray-300 aspect-16x9">
-              <iframe class="absolute inset-0 w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.2347452253975!2d130.31359865839715!3d32.06289899883038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353fb6077c4facdb%3A0x56bc6c1a000f4c8a!2z44Kr44Oz44OI44Oq44O844OA44Kk44OL44Oz44Kw44OQ44O844O744K144Km44Oz44OJ44Ot44Kx44OD44OI!5e0!3m2!1sja!2sjp!4v1593613821800!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              <iframe class="absolute inset-0 w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.226528314074!2d130.3135155151641!3d32.06312128119349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353fb60763984e1d%3A0xecbd7b4e5691e0d8!2z44CSODk5LTA0MDEg6bm_5YWQ5bO255yM5Ye65rC05biC6auY5bC-6YeO55S65aSn5LmF5L-d77yT77yX77yV77yW!5e0!3m2!1sja!2sjp!4v1595226867825!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
           </div>
         </div>
