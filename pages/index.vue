@@ -188,7 +188,7 @@ export default {
       menus: menusJSON,
       site_name: site_name,
       site_kana: site_kana,
-      site_domain: 'vibrant-shannon-0d7887.netlify.app',
+      site_domain: 'andcafe.shop',
       instagram_id: 'and.018',
       isNotProduction: false,
       description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。',
