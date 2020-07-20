@@ -66,7 +66,7 @@
           <div class="px-2 col-span-2 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">INFORMATION</h2>
             <div class="m-4">
-              <p>2020年7月に移転オープンしたand cafe (アンドカフェ)です。</p>
+              <p>2020年7月に移転オープン予定のand cafe (アンドカフェ)です。</p>
               <p>2020年6月まで阿久根市にて営業しておりました。</p>
               <p>最新情報はInstagramでご覧いただけます。</p>
             </div>
@@ -219,7 +219,7 @@ export default {
         { hid: 'og:url', property: 'og:url', content: 'https://' + this.site_domain + '/' },
         { hid: 'og:title', property: 'og:title', content: this.site_name + ' | ' + this.site_kana },
         { hid: 'og:description', property: 'og:description', content: this.description },
-        { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/logo.jpg' },
+        { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/main01.jpg' },
         { name: 'twitter:card', content: 'summary' },
       ],
     }
