@@ -25,12 +25,6 @@
                     {{ site_name }}
                   </a>
                 </li>
-                <li class="sm:hidden" v-if="opacityHeader">
-                  <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
-                </li>
-                <li class="sm:hidden" v-if="opacityHeader">
-                  <iconlink-facebook pageid="gorillakitchen.jp" v-bind:opacityHeader="opacityHeader" />
-                </li>
               </div>
             </li>
             <li>
@@ -45,11 +39,8 @@
             <li>
               <header-textlink name="COUPON" href="#coupons" v-bind:opacityHeader="opacityHeader" />
             </li>
-            <li class="hidden sm:inline-block">
+            <li>
               <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
-            </li>
-            <li class="hidden sm:inline-block">
-              <iconlink-facebook pageid="gorillakitchen.jp" v-bind:opacityHeader="opacityHeader" />
             </li>
           </ul>
         </scrollactive>
