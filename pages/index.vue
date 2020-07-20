@@ -13,8 +13,8 @@
           v-bind:click-to-scroll="vueScrollactive.clickToScroll"
           v-bind:bezier-easing-value="vueScrollactive.easing"
         >
-          <ul class="flex flex-wrap justify-end pt-2 lg:pt-1">
-            <li v-if="opacityHeader" class="w-full mr-auto lg:w-auto">
+          <ul class="flex flex-wrap justify-end pt-2 mr-0 sm:mr-2 lg:mr-4 lg:pt-1">
+            <li v-if="opacityHeader" class="w-auto mr-auto">
               <div class="flex justify-end">
                 <li class="mr-auto">
                   <a
