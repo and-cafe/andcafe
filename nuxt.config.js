@@ -55,7 +55,15 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    hostname: 'https://andcafe.shop',
+    gzip: true,
+    routes: [
+      '/',
+    ],
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
