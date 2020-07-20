@@ -78,7 +78,8 @@
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">定休日</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
-                水曜日 & 第3日曜日
+                <div>第3日曜日 &amp; 不定休</div>
+                <div class="text-sm">(最新の定休日情報はInstagramをご確認ください)</div>
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
@@ -102,7 +103,7 @@
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">住所</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
                 <div>鹿児島県出水市高尾野町大久保3756</div>
-                <div class="text-sm">※サウンドロケットさんの隣です。</div>
+                <div class="text-sm">(サウンドロケットさんの隣です)</div>
                 <a
                   href="https://www.google.com/maps?q=出水市高尾野町大久保3756"
                   target="_blank"
