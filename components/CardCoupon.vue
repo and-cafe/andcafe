@@ -1,9 +1,9 @@
 <template>
-  <div class="m-4">
+  <div class="flex justify-center p-4 md:px-12 lg:p-4 lg:w-1/2">
     <div class="w-full max-w-sm sm:flex-row sm:max-w-full sm:flex">
-      <div class="flex-none h-48 overflow-hidden text-center bg-cover rounded-t sm:h-auto sm:w-48 sm:rounded-t-none sm:rounded-l" style="background-image: url('https://tailwindcss.com/img/card-left.jpg')" title="Woman holding a mug">
+      <div class="flex-none h-48 overflow-hidden text-center bg-cover rounded-t sm:h-auto sm:w-48 sm:rounded-t-none sm:rounded-l" style="background-image: url('/images/coupon01.jpg')">
       </div>
-      <div class="flex flex-col justify-between p-4 leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b sm:border-l-0 sm:border-t sm:border-gray-400 sm:rounded-b-none sm:rounded-r">
+      <div class="flex flex-col justify-between flex-grow p-4 leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b sm:border-l-0 sm:border-t sm:border-gray-400 sm:rounded-b-none sm:rounded-r">
         <div class="mb-8">
           <p class="flex items-center text-sm text-gray-600" v-if="annotation">
             {{ annotation }}

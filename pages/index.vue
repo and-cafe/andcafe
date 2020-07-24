@@ -145,7 +145,12 @@
       <section id="coupons" class="h-screen p-2 lg:p-8">
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">COUPONS</h2>
 
-        <div class="flex flex-col justify-center lg:flex-row">
+        <div class="p-4">
+          <p class="font-bold">ご利用方法</p>
+          <p class="pl-4 text-sm">ご注文時にクーポン画面をご提示ください。</p>
+        </div>
+
+        <div class="flex flex-col justify-center lg:flex-row lg:flex-wrap lg:justify-start">
           <card-coupon
             annotation="【移転オープン記念】"
             title="トッピング1つ無料クーポン"
@@ -154,6 +159,7 @@
 ・期間中は何度でもご利用いただけます。"
             period="オープン日から2020年8月末まで"
           />
+          <!--
           <card-coupon
             annotation="【移転オープン記念】【平日限定】"
             title="￥100割引クーポン"
@@ -163,6 +169,7 @@
 ・土日祝はご利用いただけません。"
             period="オープン日から2020年8月末まで"
           />
+          -->
         </div>
 
         <footer-copyright v-bind:name="site_name" />
@@ -221,6 +228,10 @@ export default {
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/main01.jpg' },
         { name: 'twitter:card', content: 'summary' },
+      ],
+      link: [
+        { rel: 'preload', href: '/images/main01.jpg', as: 'image', type: 'image/jpeg' },
+        { rel: 'preload', href: '/images/coupon01.jpg', as: 'image', type: 'image/jpeg' },
       ],
     }
   },
