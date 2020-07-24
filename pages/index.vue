@@ -105,7 +105,7 @@
                 <div>鹿児島県出水市高尾野町大久保3756</div>
                 <div class="text-sm">(サウンドロケットさんの隣です)</div>
                 <a
-                  href="https://www.google.com/maps?q=出水市高尾野町大久保3756"
+                  href="https://www.google.com/maps?q=出水市高尾野町大久保3756+and+cafe"
                   target="_blank"
                   rel="noopener"
                   class="button--grey"
