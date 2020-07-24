@@ -66,20 +66,24 @@
           <div class="px-2 col-span-2 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">INFORMATION</h2>
             <div class="m-4">
-              <p>2020年7月に移転オープン予定のand cafe (アンドカフェ)です。</p>
-              <p>2020年6月まで阿久根市にて営業しておりました。</p>
-              <p>最新情報はInstagramでご覧いただけます。</p>
+              <p>2020年7月26日に出水市へ移転オープンするand cafe (アンドカフェ)です。</p>
+              <p>(2020年6月末まで阿久根市にて営業しておりました)</p>
+
+              <p class="pt-4">タピオカドリンクやフラッペ・シェイクなどのドリンクスイーツを、テイクアウト販売しております。</p>
+              <p>その他にハンドメイドのドライフラワーやピアス・イアリングなど販売しております。</p>
+
+              <p class="pt-4">最新情報はInstagramでご覧いただけます。</p>
             </div>
 
             <dl class="flex flex-wrap mx-4 mt-4 scrollFadeIn" id="info_detail">
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">営業時間</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
-                11:00-17:30
+                11:00-17:00
               </dd>
-              <dt class="w-1/3 mb-2 font-bold md:w-1/4">定休日</dt>
+              <dt class="w-1/3 mb-2 font-bold md:w-1/4">店休日</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
                 <div>第3日曜日 &amp; 不定休</div>
-                <div class="text-sm">(最新の定休日情報はInstagramをご確認ください)</div>
+                <div class="text-sm">(最新の店休日情報はInstagramをご確認ください)</div>
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
