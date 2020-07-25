@@ -317,15 +317,17 @@ export default {
           toggleActions: "restart none none none"
         }
       });
-      gsap.from("#coupons", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#coupons",
-          toggleActions: "restart none none none"
-        }
-      });
+      if (this.enableCoupon) {
+        gsap.from("#coupons", {
+          y: 30,
+          duration: 2,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: "#coupons",
+            toggleActions: "restart none none none"
+          }
+        });
+      }
       gsap.from("#footer", {
         duration: 2,
         opacity: 0,
