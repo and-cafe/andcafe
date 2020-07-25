@@ -11,6 +11,10 @@
           <div class="mb-2 text-xl font-bold text-gray-900">{{ title }}</div>
           <p class="text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">※ご利用条件</p>
           <p class="text-xs text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">{{ note }}</p>
+          <template v-if="hashtag">
+            <p class="mt-4 text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">指定ハッシュタグです。コピーしてご利用ください。</p>
+            <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" type="text" v-bind:value="hashtag" ref="target" @click="$refs.target.select()">
+          </template>
         </div>
         <div class="flex items-center">
           <!--
@@ -53,6 +57,10 @@ export default {
     period: {
       type: String,
       required: true,
+    },
+    hashtag: {
+      type: String,
+      required: false,
     },
   }
 }

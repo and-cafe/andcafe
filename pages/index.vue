@@ -157,6 +157,16 @@
         <div class="flex flex-col justify-center lg:flex-row lg:flex-wrap lg:justify-start">
           <card-coupon
             annotation="【移転オープン記念】"
+            title="100円キャッシュバック"
+            note="・Instagramのand cafeアカウント(@and.018)のフォローと、指定したハッシュタグ付きの投稿が確認できた場合にご利用いただけます。
+・ドリンクをご注文いただいた際にご利用いただけます。
+・他のクーポンとの併用はできません。
+・期間中は何度でもご利用いただけます。"
+            period="オープン日から2020年8月末まで"
+            hashtag="#andcafe移転オープン"
+          />
+          <card-coupon
+            annotation="【移転オープン記念】"
             title="トッピング1つ無料クーポン"
             note="・ドリンクをご注文いただいた際にご利用いただけます。
 ・他のクーポンとの併用はできません。
