@@ -36,7 +36,7 @@
             <li>
               <header-textlink name="MENU" href="#menus" v-bind:opacityHeader="opacityHeader" />
             </li>
-            <li>
+            <li v-if="enableCoupon">
               <header-textlink name="COUPON" href="#coupons" v-bind:opacityHeader="opacityHeader" />
             </li>
             <li>
@@ -146,7 +146,7 @@
 
       </section>
 
-      <section id="coupons" class="h-screen p-2 lg:p-8">
+      <section id="coupons" class="h-screen p-2 lg:p-8" v-if="enableCoupon">
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">COUPONS</h2>
 
         <div class="p-4">
@@ -162,7 +162,7 @@
 ・ドリンクをご注文いただいた際にご利用いただけます。
 ・他のクーポンとの併用はできません。
 ・期間中は何度でもご利用いただけます。"
-            period="オープン日から2020年8月末まで"
+            period="オープン日から2020年7月末まで"
             hashtag="#andcafe移転オープン"
           />
           <card-coupon
@@ -171,23 +171,21 @@
             note="・ドリンクをご注文いただいた際にご利用いただけます。
 ・他のクーポンとの併用はできません。
 ・期間中は何度でもご利用いただけます。"
-            period="オープン日から2020年8月末まで"
+            period="オープン日から2020年7月末まで"
           />
-          <!--
           <card-coupon
             annotation="【移転オープン記念】【平日限定】"
-            title="￥100割引クーポン"
+            title="50円割引クーポン"
             note="・ドリンクをご注文いただいた際にご利用いただけます。
 ・他のクーポンとの併用はできません。
 ・期間中は何度でもご利用いただけます。
 ・土日祝はご利用いただけません。"
-            period="オープン日から2020年8月末まで"
+            period="オープン日から2020年7月末まで"
           />
-          -->
         </div>
-
-        <footer-copyright v-bind:name="site_name" />
       </section>
+
+      <footer-copyright v-bind:name="site_name" />
     </main>
 
   </div>
@@ -206,6 +204,7 @@ export default {
       site_kana= 'アンドカフェ';
 
     return {
+      enableCoupon: false,
       menus: menusJSON,
       site_name: site_name,
       site_kana: site_kana,
