@@ -155,6 +155,7 @@
         </div>
 
         <div class="flex flex-col justify-center lg:flex-row lg:flex-wrap lg:justify-start">
+          <!--
           <card-coupon
             annotation="【移転オープン記念】"
             title="100円キャッシュバック"
@@ -173,14 +174,15 @@
 ・期間中は何度でもご利用いただけます。"
             period="オープン日から2020年7月末まで"
           />
+          -->
           <card-coupon
             annotation="【移転オープン記念】【平日限定】"
-            title="50円割引クーポン"
+            title="トッピング半額クーポン"
+            subtitle="トッピングが半額の￥40でご注文いただけます"
             note="・ドリンクをご注文いただいた際にご利用いただけます。
-・他のクーポンとの併用はできません。
 ・期間中は何度でもご利用いただけます。
 ・土日祝はご利用いただけません。"
-            period="オープン日から2020年7月末まで"
+            period="2020/7/28(火) 〜 2020/7/31(金)"
           />
         </div>
       </section>
@@ -204,7 +206,7 @@ export default {
       site_kana= 'アンドカフェ';
 
     return {
-      enableCoupon: false,
+      enableCoupon: true,
       menus: menusJSON,
       site_name: site_name,
       site_kana: site_kana,

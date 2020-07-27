@@ -8,8 +8,10 @@
           <p class="flex items-center text-sm text-gray-600" v-if="annotation">
             {{ annotation }}
           </p>
-          <div class="mb-2 text-xl font-bold text-gray-900">{{ title }}</div>
-          <p class="text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">※ご利用条件</p>
+          <div class="text-xl font-bold text-gray-900">{{ title }}</div>
+          <div class="pl-1 mb-2 text-sm text-gray-900">{{ subtitle }}</div>
+
+          <p class="pt-2 text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">※ご利用条件</p>
           <p class="text-xs text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">{{ note }}</p>
           <template v-if="hashtag">
             <p class="mt-4 text-xs font-bold text-left text-gray-700" style="white-space:pre-wrap; word-wrap:break-word">指定ハッシュタグです。コピーしてご利用ください。</p>
@@ -47,6 +49,10 @@ export default {
       required: false,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
       type: String,
       required: true,
     },
