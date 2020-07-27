@@ -83,7 +83,10 @@
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">店休日</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
                 <div>第3日曜日 &amp; 不定休</div>
+                <!--
                 <div class="text-sm">(最新の店休日情報はInstagramをご確認ください)</div>
+                -->
+                <div class="text-sm font-bold text-red-500">※次回店休日は8/3(月)です</div>
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
