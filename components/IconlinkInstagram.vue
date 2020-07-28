@@ -1,5 +1,5 @@
 <template>
-  <a v-bind:href="'https://www.instagram.com/'+username" target="_blank" rel="noopener">
+  <a v-bind:href="'https://www.instagram.com/'+username" target="_blank" rel="noopener" v-bind:aria-label="'Instagram '+username">
     <svg
       class="w-8 h-8 text-white fill-current md:w-10 md:h-10 hover:text-gray-400"
       v-bind:class="[{ 'text-gray-900': opacityHeader }, { 'hover:text-gray-600': opacityHeader }]"

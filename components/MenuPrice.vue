@@ -1,6 +1,6 @@
 <template>
   <section class="m-4 md:m-8 col-span-1">
-    <h4 class="inline-block px-6 py-2 mb-4 font-bold" v-bind:class="color">{{ title }}</h4>
+    <h3 class="inline-block px-6 py-2 mb-4 font-bold" v-bind:class="color">{{ title }}</h3>
 
     <template v-for="(item, index) in menuData">
       <div class="flex m-1">
