@@ -61,7 +61,7 @@
       <section id="info" class="scrollFadeIn">
         <div class="p-2 lg:p-8 grid grid-cols-2 sm:grid-cols-3">
           <div class="hidden rounded-lg sm:col-span-1 sm:block">
-            <img src="/images/main01.jpg" class="rounded-lg">
+            <img data-src="/images/main01.jpg" class="rounded-lg lazyload">
           </div>
 
           <div class="px-2 col-span-2 lg:px-8">
@@ -202,6 +202,8 @@ import { gsap } from "gsap";
 //import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import { lazysizes } from "lazysizes";
+
 import menusJSON from '~/assets/json/menus.json'
 
 export default {
@@ -249,7 +251,6 @@ export default {
         { name: 'twitter:card', content: 'summary' },
       ],
       link: [
-        { rel: 'preload', href: '/images/main01.jpg', as: 'image', type: 'image/jpeg' },
         { rel: 'preload', href: '/images/coupon01.jpg', as: 'image', type: 'image/jpeg' },
       ],
     }
