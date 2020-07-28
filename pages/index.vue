@@ -36,7 +36,8 @@
             <li>
               <header-textlink name="MENU" href="#menus" v-bind:opacityHeader="opacityHeader" />
             </li>
-            <li v-if="enableCoupon">
+            <li v-if="enableCoupon" class="flex">
+              <span class="text-xs font-bold text-red-500">NEW</span>
               <header-textlink name="COUPON" href="#coupons" v-bind:opacityHeader="opacityHeader" />
             </li>
             <li>
