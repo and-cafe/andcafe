@@ -4,6 +4,7 @@
 
     <template v-for="(item, index) in menuData">
       <div class="flex m-1">
+        <span class="text-xs font-bold text-red-500" v-if="item.new">NEW</span>
         <span class="font-bold">{{ item.name }}</span>
         <span class="ml-auto font-bold">￥{{ item.price | addComma }}</span>
       </div>

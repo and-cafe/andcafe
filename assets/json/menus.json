@@ -31,6 +31,11 @@
     {
       "name": "カフェモカ",
       "price": 430
+    },
+    {
+      "name": "イチゴ杏仁",
+      "price": 600,
+      "new": true
     }
   ],
   "tapioca": {
