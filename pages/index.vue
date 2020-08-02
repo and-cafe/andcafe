@@ -115,7 +115,7 @@
 
       </section>
 
-      <section id="coupons" class="h-screen p-2 lg:p-8" v-if="enableCoupon">
+      <section id="coupons" class="min-h-screen p-2 lg:p-8" v-if="enableCoupon">
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">COUPONS</h2>
 
         <div class="p-4">
@@ -154,9 +154,9 @@
             period="2020/8/4(火) 〜 2020/8/7(金)"
           />
         </div>
-      </section>
 
-      <footer-copyright v-bind:name="site_name" />
+        <footer-copyright v-bind:name="site_name" />
+      </section>
     </main>
 
   </div>
