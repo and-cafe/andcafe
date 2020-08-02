@@ -1,0 +1,22 @@
+[
+  {
+    "name": "INFO",
+    "href": "#info"
+  },
+  {
+    "name": "ACCESS",
+    "href": "#access"
+  },
+  {
+    "name": "MENU",
+    "href": "#menus"
+  },
+  {
+    "name": "COUPON",
+    "href": "#coupons",
+    "new": true
+  },
+  {
+    "name": "Instagram"
+  }
+]

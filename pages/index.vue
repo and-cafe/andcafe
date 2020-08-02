@@ -4,48 +4,13 @@
     <button-scroll-to-top v-bind:showButton="vueScrollto.showScrollToTopButton" />
 
     <header class="fixed z-10 w-full" ref="headerElm" id="header">
-      <div class="bg-gray-500 h-18 bg-opacity-0" v-bind:class="{ 'bg-opacity-75': opacityHeader }">
-        <scrollactive
-          ref="scrollactive"
-          v-bind:offset="vueScrollactive.offset"
-          v-bind:always-track="vueScrollactive.alwaysTrack"
-          v-bind:duration="vueScrollactive.duration"
-          v-bind:click-to-scroll="vueScrollactive.clickToScroll"
-          v-bind:bezier-easing-value="vueScrollactive.easing"
-        >
-          <ul class="flex flex-wrap justify-end pt-2 mr-0 sm:mr-2 lg:mr-4 lg:pt-1">
-            <li v-if="opacityHeader" class="w-auto mr-auto">
-              <div class="flex justify-end">
-                <li class="mr-auto">
-                  <a
-                    v-scroll-to="'body'"
-                    class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-                    v-on:click="scrollToTop"
-                  >
-                    {{ site_name }}
-                  </a>
-                </li>
-              </div>
-            </li>
-            <li>
-              <header-textlink name="INFO" href="#info" v-bind:opacityHeader="opacityHeader" />
-            </li>
-            <li>
-              <header-textlink name="ACCESS" href="#access" v-bind:opacityHeader="opacityHeader" />
-            </li>
-            <li>
-              <header-textlink name="MENU" href="#menus" v-bind:opacityHeader="opacityHeader" />
-            </li>
-            <li v-if="enableCoupon" class="flex">
-              <span class="text-xs font-bold text-red-500">NEW</span>
-              <header-textlink name="COUPON" href="#coupons" v-bind:opacityHeader="opacityHeader" />
-            </li>
-            <li>
-              <iconlink-instagram v-bind:username="instagram_id" v-bind:opacityHeader="opacityHeader" />
-            </li>
-          </ul>
-        </scrollactive>
-      </div>
+      <header-menu
+        v-bind:site_name="site_name"
+        v-bind:instagram_id="instagram_id"
+        v-bind:opacityHeader="opacityHeader"
+        v-bind:menuData="menuData"
+        v-bind:headerOffset="headerOffset"
+      />
     </header>
 
     <section class="relative h-screen">
@@ -205,31 +170,28 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { lazysizes } from "lazysizes";
 
 import menusJSON from '~/assets/json/menus.json'
+import headerJSON from '~/assets/json/header.json'
 
 export default {
   data() {
-    const site_name='and cafe',
-      site_kana= 'アンドカフェ';
+    const site_name = 'and cafe';
+    const site_kana = 'アンドカフェ';
+    const instagram_id = 'and.018';
 
     return {
       enableCoupon: true,
       menus: menusJSON,
+      menuData: headerJSON,
       site_name: site_name,
       site_kana: site_kana,
       site_domain: 'andcafe.shop',
-      instagram_id: 'and.018',
+      instagram_id: instagram_id,
       isNotProduction: false,
       description: '鹿児島県出水市の'+site_name+' ('+site_kana+') です。タピオカドリンクやフラッペ・シェイクなどをテイクアウトで販売しています。',
       vueScrollto: {
         showScrollToTopButton: false,
       },
-      vueScrollactive: {
-        alwaysTrack: false,
-        duration: 600,
-        clickToScroll: true,
-        offset: 0,
-        easing: '.5,0,.35,1',
-      },
+      headerOffset: 0,
       opacityHeader: false,
       opacityHeaderHeight: 0,
     }
@@ -359,13 +321,8 @@ export default {
       }
     },
     getHeight() {
-      this.vueScrollactive.offset = this.$refs.headerElm.clientHeight;
+      this.headerOffset = this.$refs.headerElm.clientHeight;
       this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
-    },
-    scrollToTop() {
-      if (location.hash.length > 0) {
-        history.pushState(null, null, location.pathname);
-      }
     },
   },
 }
@@ -387,10 +344,5 @@ export default {
 
 .aspect-16x9 {
   padding-bottom: 56.25%;
-}
-
-/* vue-scrollactive */
-.is-active {
-  text-decoration: underline;
 }
 </style>
