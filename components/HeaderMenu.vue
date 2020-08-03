@@ -12,30 +12,37 @@
     <ul class="flex flex-wrap justify-end pt-2 mr-0 sm:mr-2 lg:mr-4 lg:pt-1">
       <li v-if="opacityHeader" class="w-auto mr-auto">
         <div class="flex justify-end">
-          <li class="mr-auto">
-            <template v-if="path=='/'">
-              <a
-                v-scroll-to="'body'"
-                class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-                v-on:click="scrollToTop"
-              >
-                {{ site_name }}
-              </a>
-            </template>
-            <template v-else>
-              <nuxt-link
-                to="/"
-                class="pl-2 text-lg font-bold text-gray-900 md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-              >
-                {{ site_name }}
-              </nuxt-link>
-            </template>
-          </li>
+          <template v-if="path=='/'">
+            <a
+              v-scroll-to="'body'"
+              v-on:click="scrollToTop"
+              class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
+            >
+              {{ site_name }}
+            </a>
+          </template>
+          <template v-else>
+            <nuxt-link
+              to="/"
+              class="pl-2 text-lg font-bold text-gray-900 md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
+            >
+              {{ site_name }}
+            </nuxt-link>
+          </template>
         </div>
       </li>
 
       <li v-for="(item, index) in menuData" v-bind:class="{ flex: item.new }">
-        <template v-if="item.name=='Instagram'">
+        <template v-if="item.href=='/'">
+          <header-textlink
+            v-if="opacityHeader"
+            v-bind:name="item.name"
+            v-bind:href="item.href"
+            v-bind:opacityHeader="opacityHeader"
+            v-bind:enableScrollactive="false"
+          />
+        </template>
+        <template v-else-if="item.name=='Instagram'">
           <iconlink-instagram
             v-bind:username="instagram_id"
             v-bind:opacityHeader="opacityHeader"
@@ -47,6 +54,7 @@
             v-bind:name="item.name"
             v-bind:href="item.href"
             v-bind:opacityHeader="opacityHeader"
+            v-bind:enableScrollactive="true"
           />
         </template>
       </li>
@@ -56,6 +64,7 @@
 
 <script>
 export default {
+  scrollToTop: true,
   props: {
     site_name: {
       type: String,
