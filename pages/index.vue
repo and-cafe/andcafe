@@ -52,7 +52,7 @@
                 <!--
                 <div class="text-sm">(最新の店休日情報はInstagramをご確認ください)</div>
                 -->
-                <div class="text-sm font-bold text-red-500">※次回店休日は8/5(水)です</div>
+                <div class="text-sm font-bold text-red-500">※次回店休日は8/10(月)です</div>
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
