@@ -119,8 +119,11 @@
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">COUPONS</h2>
 
         <div class="p-4">
+          <p class="font-bold">現在提供中のクーポンはありません。</p>
+          <!--
           <p class="font-bold">ご利用方法</p>
           <p class="pl-4 text-sm">ご注文時にクーポン画面をご提示ください。</p>
+          -->
         </div>
 
         <div class="flex flex-col justify-center lg:flex-row lg:flex-wrap lg:justify-start">
@@ -143,7 +146,6 @@
 ・期間中は何度でもご利用いただけます。"
             period="オープン日から2020年7月末まで"
           />
-          -->
           <card-coupon
             annotation="【移転オープン記念】【平日限定】"
             title="トッピング半額クーポン"
@@ -153,6 +155,7 @@
 ・土日祝はご利用いただけません。"
             period="2020/8/4(火) 〜 2020/8/7(金)"
           />
+          -->
         </div>
 
         <footer-copyright v-bind:name="site_name" />
