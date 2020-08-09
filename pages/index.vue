@@ -215,9 +215,9 @@ export default {
         { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/main01.jpg' },
         { name: 'twitter:card', content: 'summary' },
       ],
-      link: [
-        { rel: 'preload', href: '/images/coupon01.jpg', as: 'image', type: 'image/jpeg' },
-      ],
+//      link: [
+//        { rel: 'preload', href: '/images/coupon01.jpg', as: 'image', type: 'image/jpeg' },
+//      ],
     }
   },
   mounted: function() {
