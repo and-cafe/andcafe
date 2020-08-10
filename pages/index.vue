@@ -49,10 +49,19 @@
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">店休日</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
                 <div>第3日曜日 &amp; 不定休</div>
-                <!--
-                <div class="text-sm">(最新の店休日情報はInstagramをご確認ください)</div>
-                -->
-                <div class="text-sm font-bold text-red-500">※次回店休日は8/10(月)です</div>
+
+                <div
+                  v-if="holiday"
+                  class="text-sm font-bold text-red-500"
+                >
+                  ※次回店休日は{{ holiday }}です
+                </div>
+                <div
+                  v-else
+                  class="text-sm"
+                >
+                  (最新の店休日情報はInstagramをご確認ください)
+                </div>
               </dd>
               <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
               <dd class="w-2/3 mb-2 md:w-3/4">
@@ -185,6 +194,8 @@ export default {
       enableCoupon: true,
       menus: menusJSON,
       menuData: headerJSON,
+      holiday: '',
+      //holiday: '2020/08/10',
       site_name: site_name,
       site_kana: site_kana,
       site_domain: 'andcafe.shop',
@@ -224,6 +235,7 @@ export default {
     this.setScrollTrigger();
     this.getHeight();
     this.isNotProduction = (window.location.hostname != this.site_domain)
+    this.dayjsFormat();
     window.addEventListener('scroll', this.calculateScrollY);
   },
   updated: function() {
@@ -326,6 +338,15 @@ export default {
     getHeight() {
       this.headerOffset = this.$refs.headerElm.clientHeight;
       this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
+    },
+    dayjsFormat() {
+      try {
+        if (this.holiday != '') {
+          this.holiday = this.$dayjs(this.holiday).format('M/D(ddd)');
+        }
+      } catch (e) {
+        this.holiday = '';
+      }
     },
   },
 }

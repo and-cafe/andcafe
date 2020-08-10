@@ -56,6 +56,7 @@ export default {
   */
   modules: [
     '@nuxtjs/sitemap',
+    '@nuxtjs/dayjs'
   ],
   sitemap: {
     hostname: 'https://andcafe.shop',
@@ -63,6 +64,10 @@ export default {
     routes: [
       '/',
     ],
+  },
+  dayjs: {
+    locales: ['en', 'ja'],
+    defaultLocale: 'ja'
   },
   /*
   ** Build configuration
