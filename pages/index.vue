@@ -185,6 +185,14 @@ import menusJSON from '~/assets/json/menus.json'
 import headerJSON from '~/assets/json/header.json'
 
 export default {
+  async fetch() {
+    const apiData = await fetch(
+      // Project version 4
+      'https://script.google.com/macros/s/AKfycbwh2OdKgHsNz5NeCbZ5APaPVQ8rrQCBG8qHWrEk1he3aVPVK_4u/exec',
+    ).then(res => res.json())
+
+    this.holiday = this.getHoliday(apiData.holidays);
+  },
   data() {
     const site_name = 'and cafe';
     const site_kana = 'アンドカフェ';
@@ -195,7 +203,6 @@ export default {
       menus: menusJSON,
       menuData: headerJSON,
       holiday: '',
-      //holiday: '2020/08/10',
       site_name: site_name,
       site_kana: site_kana,
       site_domain: 'andcafe.shop',
@@ -235,7 +242,6 @@ export default {
     this.setScrollTrigger();
     this.getHeight();
     this.isNotProduction = (window.location.hostname != this.site_domain)
-    this.dayjsFormat();
     window.addEventListener('scroll', this.calculateScrollY);
   },
   updated: function() {
@@ -339,14 +345,27 @@ export default {
       this.headerOffset = this.$refs.headerElm.clientHeight;
       this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
     },
-    dayjsFormat() {
-      try {
-        if (this.holiday != '') {
-          this.holiday = this.$dayjs(this.holiday).format('M/D(ddd)');
-        }
-      } catch (e) {
-        this.holiday = '';
+    getHoliday(holidays) {
+      const holiday = this.getFirstHoliday(holidays);
+      return this.formatHoliday(holiday);
+    },
+    formatHoliday(holiday) {
+      if (holiday != '') {
+        return this.$dayjs(holiday).format('M/D(ddd)');
+      } else {
+        return '';
       }
+    },
+    getFirstHoliday(holidays) {
+      for (let i=0; i < holidays.length; i++) {
+        if (this.$dayjs().isSame(holidays[i], 'day')) {
+          return holidays[i];
+        }
+        if (this.$dayjs().isBefore(holidays[i], 'day')) {
+          return holidays[i];
+        }
+      }
+      return '';
     },
   },
 }
