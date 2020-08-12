@@ -54,7 +54,7 @@
                   v-if="holiday"
                   class="text-sm font-bold text-red-500"
                 >
-                  ※次回店休日は{{ holiday }}です
+                  ※次回店休日は{{ holiday }}です。
                 </div>
                 <div
                   v-else
@@ -346,8 +346,13 @@ export default {
       this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
     },
     getHoliday(holidays) {
-      const holiday = this.getFirstHoliday(holidays);
-      return this.formatHoliday(holiday);
+      let days = this.getEnableHolidays(holidays);
+
+      let ret = [];
+      for (const day of days) {
+        ret.push(this.formatHoliday(day));
+      }
+      return ret.join('、');
     },
     formatHoliday(holiday) {
       if (holiday != '') {
@@ -356,16 +361,17 @@ export default {
         return '';
       }
     },
-    getFirstHoliday(holidays) {
+    getEnableHolidays(holidays) {
+      let ret = [];
       for (let i=0; i < holidays.length; i++) {
         if (this.$dayjs().isSame(holidays[i], 'day')) {
-          return holidays[i];
+          ret.push(holidays[i]);
         }
         if (this.$dayjs().isBefore(holidays[i], 'day')) {
-          return holidays[i];
+          ret.push(holidays[i]);
         }
       }
-      return '';
+      return ret;
     },
   },
 }
