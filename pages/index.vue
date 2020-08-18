@@ -145,7 +145,7 @@ export default {
     }
   },
   mounted: function() {
-    this.setScrollTrigger();
+    this.setScrollTriggers();
     this.getHeight();
     this.isNotProduction = (window.location.hostname != this.site_domain)
     window.addEventListener('scroll', this.calculateScrollY);
@@ -157,81 +157,26 @@ export default {
     window.removeEventListener('scroll', this.calculateScrollY);
   },
   methods: {
-    setScrollTrigger() {
+    setScrollTrigger(target) {
+      gsap.from(target, {
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: target,
+          toggleActions: "restart none none none"
+        }
+      });
+    },
+    setScrollTriggers() {
       gsap.registerPlugin(ScrollTrigger);
-
-      gsap.from("#header", {
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#header",
-          toggleActions: "restart none none none"
-        }
-      });
-      gsap.from("#site_name", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#site_name",
-          toggleActions: "restart none none none"
-        }
-      });
-      gsap.from("#info", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#info",
-          toggleActions: "restart none none none"
-        }
-      });
-      gsap.from("#info_detail", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#info_detail",
-          toggleActions: "restart none none none"
-        }
-      });
-      gsap.from("#access", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#access",
-          toggleActions: "restart none none none"
-        }
-      });
-      gsap.from("#menus", {
-        y: 30,
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#menus",
-          toggleActions: "restart none none none"
-        }
-      });
-      if (this.enableCoupon) {
-        gsap.from("#coupons", {
-          y: 30,
-          duration: 2,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: "#coupons",
-            toggleActions: "restart none none none"
-          }
-        });
-      }
-      gsap.from("#footer", {
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#footer",
-          toggleActions: "restart none none none"
-        }
-      });
+      this.setScrollTrigger('#header');
+      this.setScrollTrigger('#site_name');
+      this.setScrollTrigger('#info');
+      this.setScrollTrigger('#info_detail');
+      this.setScrollTrigger('#access');
+      this.setScrollTrigger('#menus');
+      this.setScrollTrigger('#coupons');
+      this.setScrollTrigger('#footer');
     },
     calculateScrollY() {
       this.scrollY = window.scrollY;
