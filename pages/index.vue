@@ -14,7 +14,6 @@
     </header>
 
     <hero-header
-      ref="heroElm"
       v-bind:site_name="site_name"
     />
 
@@ -157,7 +156,7 @@ export default {
     },
     getHeight() {
       this.headerOffset = this.$refs.headerElm.clientHeight;
-      this.opacityHeaderHeight = this.$refs.heroElm.clientHeight - this.$refs.headerElm.clientHeight - 1;
+      this.opacityHeaderHeight = window.innerHeight - this.$refs.headerElm.clientHeight - 1;
     },
     getHoliday(holidays) {
       let days = this.getEnableHolidays(holidays);
