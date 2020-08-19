@@ -9,6 +9,7 @@
         v-bind:instagram_id="instagram_id"
         v-bind:opacityHeader="opacityHeader"
         v-bind:menuData="menuData"
+        v-bind:enableLineBreak="false"
         v-bind:headerOffset="headerOffset"
       />
     </header>
