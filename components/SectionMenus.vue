@@ -4,11 +4,11 @@
 
     <section>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-        <menu-price title="SPECIAL" color="bg-yellow-500" v-bind:menuData="menus.special" />
-        <menu-price-item-list title="TAPIOCA" color="bg-yellow-500" v-bind:menuData="menus.tapioca" />
-        <menu-price-item-list title="FRAPPE" color="bg-yellow-500" v-bind:menuData="menus.frappe" />
-        <menu-price-item-list title="SHAKE" color="bg-yellow-500" v-bind:menuData="menus.shake" />
-        <menu-price-item-list title="TOPPING" color="bg-yellow-500" v-bind:menuData="menus.topping" />
+        <menu-price title="SPECIAL" color="bg-yellow-500" v-bind:menuData="menus.special" id="special" />
+        <menu-price-item-list title="TAPIOCA" color="bg-yellow-500" v-bind:menuData="menus.tapioca" id="tapioca" />
+        <menu-price-item-list title="FRAPPE" color="bg-yellow-500" v-bind:menuData="menus.frappe" id="frappe" />
+        <menu-price-item-list title="SHAKE" color="bg-yellow-500" v-bind:menuData="menus.shake" id="shake" />
+        <menu-price-item-list title="TOPPING" color="bg-yellow-500" v-bind:menuData="menus.topping" id="topping" />
       </div>
     </section>
 

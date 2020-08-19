@@ -39,6 +39,16 @@
               >
                 {{ site_name }}
               </nuxt-link>
+              <a
+                v-scroll-to="'body'"
+                v-on:click="scrollToTop"
+                class="pl-2 text-base font-bold text-gray-900 cursor-pointer md:text-xl hover:text-gray-600"
+              >
+                <!--
+                class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl hover:text-gray-600"
+                -->
+                {{ page_name }}
+              </a>
             </template>
           </li>
 
@@ -142,6 +152,10 @@ export default {
     enableLineBreak: {
       type: Boolean,
       required: true,
+    },
+    page_name: {
+      type: String,
+      required: false,
     },
   },
   data() {
