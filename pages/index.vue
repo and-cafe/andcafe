@@ -21,7 +21,7 @@
     <main class="relative mx-auto xl:max-w-screen-xl">
       <section-info
         v-bind:instagram_id="instagram_id"
-        v-bind:holiday="holiday"
+        v-bind:holidays="holidays"
       />
 
       <section-access />
@@ -59,7 +59,7 @@ export default {
       'https://script.google.com/macros/s/AKfycbwh2OdKgHsNz5NeCbZ5APaPVQ8rrQCBG8qHWrEk1he3aVPVK_4u/exec',
     ).then(res => res.json())
 
-    this.holiday = this.getHoliday(apiData.holidays);
+    this.holidays = apiData.holidays;
   },
   data() {
     const site_name = 'and cafe';
@@ -70,7 +70,7 @@ export default {
       enableCoupon: true,
       menus: menusJSON,
       menuData: headerJSON,
-      holiday: '',
+      holidays: [],
       site_name: site_name,
       site_kana: site_kana,
       site_domain: 'andcafe.shop',
@@ -105,6 +105,10 @@ export default {
 //      link: [
 //        { rel: 'preload', href: '/images/coupon01.jpg', as: 'image', type: 'image/jpeg' },
 //      ],
+      script: [
+        { src: 'https://unpkg.com/dayjs' },
+        { src: 'https://unpkg.com/dayjs/locale/ja.js' },
+      ],
     }
   },
   mounted: function() {
@@ -158,34 +162,6 @@ export default {
     getHeight() {
       this.headerOffset = this.$refs.headerElm.clientHeight;
       this.opacityHeaderHeight = window.innerHeight - this.$refs.headerElm.clientHeight - 1;
-    },
-    getHoliday(holidays) {
-      let days = this.getEnableHolidays(holidays);
-
-      let ret = [];
-      for (const day of days) {
-        ret.push(this.formatHoliday(day));
-      }
-      return ret.join('、');
-    },
-    formatHoliday(holiday) {
-      if (holiday != '') {
-        return this.$dayjs(holiday).format('M/D(ddd)');
-      } else {
-        return '';
-      }
-    },
-    getEnableHolidays(holidays) {
-      let ret = [];
-      for (let i=0; i < holidays.length; i++) {
-        if (this.$dayjs().isSame(holidays[i], 'day')) {
-          ret.push(holidays[i]);
-        }
-        if (this.$dayjs().isBefore(holidays[i], 'day')) {
-          ret.push(holidays[i]);
-        }
-      }
-      return ret;
     },
   },
 }

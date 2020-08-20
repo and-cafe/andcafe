@@ -26,17 +26,18 @@
           <dd class="w-2/3 mb-2 md:w-3/4">
             <div>第3日曜日 &amp; 不定休</div>
 
-            <div
-              v-if="holiday"
-              class="text-sm font-bold text-red-500"
-            >
-              ※次回店休日は{{ holiday }}です。
-            </div>
-            <div
-              v-else
-              class="text-sm"
-            >
-              (最新の店休日情報はInstagramをご確認ください)
+            <div class="text-sm">
+              <client-only placeholder="(最新の店休日情報はInstagramをご確認ください)">
+                <div class="hidden" id="is_not_holiday">
+                  (最新の店休日情報はInstagramをご確認ください)
+                </div>
+                <div class="hidden font-bold text-red-500" id="is_holiday">
+                  ※次回店休日は<span id="holiday_days"></span>です。
+                </div>
+                <section-info-script
+                  v-bind:holidays="holidays"
+                />
+              </client-only>
             </div>
           </dd>
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
@@ -57,8 +58,8 @@ export default {
       type: String,
       required: true,
     },
-    holiday: {
-      type: String,
+    holidays: {
+      type: Array,
       required: true,
     },
   },
