@@ -78,6 +78,10 @@ export default {
         { hid: 'og:image', property: 'og:image', content: 'https://' + this.site_domain + '/images/main01.jpg' },
         { name: 'twitter:card', content: 'summary' },
       ],
+      script: [
+        { src: 'https://unpkg.com/dayjs' },
+        { src: 'https://unpkg.com/dayjs/locale/ja.js' },
+      ],
     }
   },
   mounted: function() {
