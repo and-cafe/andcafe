@@ -8,6 +8,7 @@
       { 'hover:text-gray-600': opacityHeader },
       { 'scrollactive-item': enableScrollactive }
     ]"
+    v-on:click="gaEvent(href)"
   >
     <upper-text v-bind:name="name" />
   </a>
@@ -70,6 +71,12 @@ export default {
         history.pushState(null, null, location.pathname);
       }
     },
+    gaEvent(action) {
+      this.$ga.event({
+        eventCategory: 'header',
+        eventAction: action,
+      });
+    }
   },
 }
 </script>
