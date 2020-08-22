@@ -42,8 +42,21 @@
           </dd>
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">Instagram</dt>
           <dd class="w-2/3 mb-2 md:w-3/4">
-            <div><a v-bind:href="'https://www.instagram.com/'+instagram_id" target="_blank" rel="noopener">@{{ instagram_id }}</a></div>
-            <a v-bind:href="'https://www.instagram.com/'+instagram_id" target="_blank" rel="noopener" class="button--grey">Instagramを開く</a>
+            <div>
+              <a
+                v-bind:href="'https://www.instagram.com/'+instagram_id"
+                target="_blank"
+                rel="noopener"
+                v-on:click="gaEvent('Instagram', 'link')"
+              >@{{ instagram_id }}</a>
+            </div>
+            <a
+              v-bind:href="'https://www.instagram.com/'+instagram_id"
+              target="_blank"
+              rel="noopener"
+              class="button--grey"
+              v-on:click="gaEvent('Instagram', 'button')"
+            >Instagramを開く</a>
           </dd>
         </dl>
       </div>
@@ -62,6 +75,15 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  methods: {
+    gaEvent(action, label) {
+      this.$ga.event({
+        eventCategory: 'info',
+        eventAction: action,
+        eventLabel: label,
+      });
+    }
   },
 }
 </script>

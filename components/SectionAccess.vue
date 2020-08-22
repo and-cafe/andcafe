@@ -14,6 +14,7 @@
               target="_blank"
               rel="noopener"
               class="button--grey"
+              v-on:click="gaEvent('map')"
             >地図を開く</a>
           </dd>
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">駐車場</dt>
@@ -31,6 +32,19 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  methods: {
+    gaEvent(action) {
+      this.$ga.event({
+        eventCategory: 'access',
+        eventAction: action,
+      });
+    }
+  },
+}
+</script>
 
 <style scoped>
 .aspect-16x9 {
