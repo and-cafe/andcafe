@@ -15,7 +15,7 @@
   <a
     v-else-if="href.substring(0, 1)=='/' && path=='/'"
     v-scroll-to="'body'"
-    v-on:click="scrollToTop"
+    v-on:click="scrollToTop(href)"
     class="pr-2 text-lg font-bold text-white md:text-2xl md:pr-4 lg:pr-8 sm:pr-4 hover:text-gray-400"
     v-bind:class="[
       { 'text-gray-900': opacityHeader },
@@ -32,6 +32,7 @@
       { 'text-gray-900': opacityHeader },
       { 'hover:text-gray-600': opacityHeader }
     ]"
+    v-on:click="gaEvent(href)"
   >
     <upper-text v-bind:name="name" />
   </nuxt-link>
@@ -66,10 +67,11 @@ export default {
     this.path = window.location.pathname;
   },
   methods: {
-    scrollToTop() {
+    scrollToTop(href) {
       if (location.hash.length > 0) {
         history.pushState(null, null, location.pathname);
       }
+      this.gaEvent(href);
     },
     gaEvent(action) {
       this.$ga.event({

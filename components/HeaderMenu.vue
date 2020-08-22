@@ -23,33 +23,10 @@
       >
         <ul class="flex justify-end">
           <li class="mr-auto">
-            <template v-if="path=='/'">
-              <a
-                v-scroll-to="'body'"
-                v-on:click="scrollToTop"
-                class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-              >
-                {{ site_name }}
-              </a>
-            </template>
-            <template v-else>
-              <nuxt-link
-                to="/"
-                class="pl-2 text-lg font-bold text-gray-900 md:text-2xl lg:pl-8 sm:pl-4 md:pl-6 hover:text-gray-600"
-              >
-                {{ site_name }}
-              </nuxt-link>
-              <a
-                v-scroll-to="'body'"
-                v-on:click="scrollToTop"
-                class="pl-2 text-base font-bold text-gray-900 cursor-pointer md:text-xl hover:text-gray-600"
-              >
-                <!--
-                class="pl-2 text-lg font-bold text-gray-900 cursor-pointer md:text-2xl hover:text-gray-600"
-                -->
-                {{ page_name }}
-              </a>
-            </template>
+            <header-menu-sitename
+              v-bind:site_name="site_name"
+              v-bind:page_name="page_name"
+            />
           </li>
 
           <template v-for="(item, index) in menuData">
@@ -123,7 +100,6 @@
 
 <script>
 export default {
-  scrollToTop: true,
   props: {
     site_name: {
       type: String,
@@ -166,18 +142,7 @@ export default {
         clickToScroll: true,
         easing: '.5,0,.35,1',
       },
-      path: "",
     }
-  },
-  mounted: function() {
-    this.path = window.location.pathname;
-  },
-  methods: {
-    scrollToTop() {
-      if (location.hash.length > 0) {
-        history.pushState(null, null, location.pathname);
-      }
-    },
   },
 }
 </script>

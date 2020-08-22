@@ -1,5 +1,11 @@
 <template>
-  <a v-bind:href="'https://www.instagram.com/'+username" target="_blank" rel="noopener" v-bind:aria-label="'Instagram '+username">
+  <a
+    v-bind:href="'https://www.instagram.com/'+username"
+    target="_blank"
+    rel="noopener"
+    v-bind:aria-label="'Instagram '+username"
+    v-on:click="gaEvent('Instagram')"
+  >
     <svg
       class="w-8 h-8 text-white fill-current md:w-10 md:h-10 hover:text-gray-400"
       v-bind:class="[{ 'text-gray-900': opacityHeader }, { 'hover:text-gray-600': opacityHeader }]"
@@ -24,6 +30,14 @@ export default {
       type: String,
       required: true,
     },
+  },
+  methods: {
+    gaEvent(action) {
+      this.$ga.event({
+        eventCategory: 'header',
+        eventAction: action,
+      });
+    }
   },
 }
 </script>
