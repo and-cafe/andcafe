@@ -14,11 +14,11 @@
       />
     </header>
 
-    <hero-header
+    <hero-header-parallax
       v-bind:site_name="site_name"
     />
 
-    <main class="relative mx-auto xl:max-w-screen-xl">
+    <main class="relative mx-auto bg-white xl:max-w-screen-xl">
       <section-info
         v-bind:instagram_id="instagram_id"
         v-bind:holidays="holidays"
