@@ -1,8 +1,10 @@
 <template>
-  <section id="menus" class="p-2 lg:p-8">
-    <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">MENU</h2>
+  <section id="menus" class="py-2 lg:py-8">
+    <h2 class="px-2 text-3xl font-bold text-gray-900 md:text-5xl lg:px-8">MENU</h2>
 
-    <section>
+    <section-menus-swiper />
+
+    <section class="px-2 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
         <menu-price title="SPECIAL" color="bg-yellow-500" v-bind:menuData="menus.special" id="special" />
         <menu-price-item-list title="TAPIOCA" color="bg-yellow-500" v-bind:menuData="menus.tapioca" id="tapioca" />
