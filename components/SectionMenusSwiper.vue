@@ -24,11 +24,6 @@
     <swiper-slide><img src="/images/shake03.jpg" class="rounded-none lg:rounded-lg"></swiper-slide>
     <swiper-slide><img src="/images/special01.jpg" class="rounded-none lg:rounded-lg"></swiper-slide>
     <swiper-slide><img src="/images/special02.jpg" class="rounded-none lg:rounded-lg"></swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
-    <!--
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
-    -->
   </swiper>
 </template>
 
@@ -46,18 +41,11 @@ export default {
       swiperOption: {
         slidesPerView: 4,
         centeredSlides: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
         autoplay: {
-          delay: 4000,
+          delay: 1500,
           disableOnInteraction: false
         },
+        speed: 1000,
         loop: true,
         breakpoints: {
           640: {
