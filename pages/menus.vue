@@ -110,6 +110,11 @@ export default {
     setScrollTriggers() {
       gsap.registerPlugin(ScrollTrigger);
       this.setScrollTrigger('#menus');
+      this.setScrollTrigger('#special');
+      this.setScrollTrigger('#tapioca');
+      this.setScrollTrigger('#frappe');
+      this.setScrollTrigger('#shake');
+      this.setScrollTrigger('#topping');
       this.setScrollTrigger('#footer');
     },
     calculateScrollY() {

@@ -142,6 +142,11 @@ export default {
       this.setScrollTrigger('#info_detail');
       this.setScrollTrigger('#access');
       this.setScrollTrigger('#menus');
+      this.setScrollTrigger('#special');
+      this.setScrollTrigger('#tapioca');
+      this.setScrollTrigger('#frappe');
+      this.setScrollTrigger('#shake');
+      this.setScrollTrigger('#topping');
       this.setScrollTrigger('#coupons');
       this.setScrollTrigger('#footer');
     },
