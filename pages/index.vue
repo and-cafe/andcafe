@@ -18,24 +18,26 @@
       v-bind:site_name="site_name"
     />
 
-    <main class="relative mx-auto bg-white xl:max-w-screen-xl">
-      <section-info
-        v-bind:instagram_id="instagram_id"
-        v-bind:holidays="holidays"
-      />
-
-      <section-access />
-
-      <section-menus
-        v-bind:menus="menus"
-      />
-
-      <section class="min-h-screen">
-        <section-coupons
-          v-bind:isCoupons="isCoupons"
+    <main class="relative w-full bg-white">
+      <section class="mx-auto xl:max-w-screen-xl">
+        <section-info
+          v-bind:instagram_id="instagram_id"
+          v-bind:holidays="holidays"
         />
 
-        <footer-copyright v-bind:name="site_name" />
+        <section-access />
+
+        <section-menus
+          v-bind:menus="menus"
+        />
+
+        <section class="min-h-screen">
+          <section-coupons
+            v-bind:isCoupons="isCoupons"
+          />
+
+          <footer-copyright v-bind:name="site_name" />
+        </section>
       </section>
     </main>
 
