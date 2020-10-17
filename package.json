@@ -20,7 +20,6 @@
     "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/tailwindcss": "^3.0.0"
   }
 }
