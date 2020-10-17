@@ -55,7 +55,8 @@ export default {
   */
   modules: [
     '@nuxtjs/sitemap',
-    '@nuxtjs/dayjs'
+    '@nuxtjs/dayjs',
+    '@nuxtjs/gtm',
   ],
   sitemap: {
     hostname: 'https://andcafe.shop',
@@ -67,6 +68,11 @@ export default {
   dayjs: {
     locales: ['en', 'ja'],
     defaultLocale: 'ja'
+  },
+  gtm: {
+    id: 'GTM-KLXD2QJ',
+    pageTracking: true,
+    //enabled: true,
   },
   /*
   ** Build configuration
