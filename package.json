@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxtjs/dayjs": "^1.1.9",
+    "@nuxtjs/gtm": "^2.3.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "gsap": "^3.3.4",
     "lazysizes": "^5.2.2",
