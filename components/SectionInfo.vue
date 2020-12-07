@@ -20,11 +20,12 @@
         <dl class="flex flex-wrap mx-4 mt-4 scrollFadeIn" id="info_detail">
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">営業時間</dt>
           <dd class="w-2/3 mb-2 md:w-3/4">
-            11:00-17:00
+            <p>11:00-17:00</p>
+            <p>※木曜日のみ15:00-19:00</p>
           </dd>
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">店休日</dt>
           <dd class="w-2/3 mb-2 md:w-3/4">
-            <div>第3日曜日 &amp; 不定休</div>
+            <div>水曜日 &amp; 第1日曜日 &amp; 第3日曜日 &amp; 不定休</div>
 
             <div class="text-sm">
               <client-only placeholder="(最新の店休日情報はInstagramをご確認ください)">
