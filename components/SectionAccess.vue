@@ -37,10 +37,10 @@
 export default {
   methods: {
     gaEvent(action) {
-      this.$ga.event({
-        eventCategory: 'access',
-        eventAction: action,
-      });
+//      this.$ga.event({
+//        eventCategory: 'access',
+//        eventAction: action,
+//      });
     }
   },
 }
