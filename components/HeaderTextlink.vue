@@ -74,10 +74,10 @@ export default {
       this.gaEvent(href);
     },
     gaEvent(action) {
-      this.$ga.event({
-        eventCategory: 'header',
-        eventAction: action,
-      });
+//      this.$ga.event({
+//        eventCategory: 'header',
+//        eventAction: action,
+//      });
     }
   },
 }

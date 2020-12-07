@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     gaEvent(action) {
-      this.$ga.event({
-        eventCategory: 'header',
-        eventAction: action,
-      });
+//      this.$ga.event({
+//        eventCategory: 'header',
+//        eventAction: action,
+//      });
     }
   },
 }

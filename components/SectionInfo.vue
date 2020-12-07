@@ -79,11 +79,11 @@ export default {
   },
   methods: {
     gaEvent(action, label) {
-      this.$ga.event({
-        eventCategory: 'info',
-        eventAction: action,
-        eventLabel: label,
-      });
+//      this.$ga.event({
+//        eventCategory: 'info',
+//        eventAction: action,
+//        eventLabel: label,
+//      });
     }
   },
 }
