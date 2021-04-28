@@ -8,13 +8,13 @@
       <div class="px-2 col-span-2 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 md:text-5xl">INFORMATION</h2>
         <div class="m-4">
-          <p>2020年7月26日に出水市へ移転オープンするand cafe (アンドカフェ)です。</p>
+          <p>2020年7月26日に出水市へ移転オープンしたand cafe (アンドカフェ)です。</p>
           <p>(2020年6月末まで阿久根市にて営業しておりました)</p>
 
-          <p class="pt-4">タピオカドリンクやフラッペ・シェイクなどのドリンクスイーツを、テイクアウト販売しております。</p>
+          <p class="pt-4">タピオカドリンクやフラッペ・シェイクなどのドリンクスイーツや、ホットサンドやハニートーストなどをテイクアウト販売しております。</p>
           <p>その他にハンドメイドのドライフラワーやピアス・イアリングなど販売しております。</p>
 
-          <p class="pt-4">最新情報はInstagramでご覧いただけます。</p>
+          <p class="pt-4">最新情報はInstagramで更新していますので、ぜひご覧ください。</p>
         </div>
 
         <dl class="flex flex-wrap mx-4 mt-4 scrollFadeIn" id="info_detail">
