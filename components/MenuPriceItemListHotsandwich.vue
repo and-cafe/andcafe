@@ -11,6 +11,25 @@
         </div>
       </div>
     </template>
+
+    <div class="font-bold m-4 text-sm">
+      セットのポテトの味をお選びいただけます。
+      <template v-for="(item, index) in menuData.potato">
+        <ul class="flex m-1 list-disc ml-8" v-bind:key="index">
+          <li>{{ item }}</li>
+        </ul>
+      </template>
+
+      <span class="mt-4">
+        ドリンクセット +&yen;{{ menuData.drink_price | addComma }}
+      </span>
+      <template v-for="(item, index) in menuData.drink">
+        <ul class="flex m-1 list-disc ml-8" v-bind:key="index">
+          <li>{{ item }}</li>
+        </ul>
+      </template>
+    </div>
+
   </section>
 </template>
 

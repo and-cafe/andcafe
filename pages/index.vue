@@ -148,6 +148,10 @@ export default {
       this.setScrollTrigger('#tapioca');
       this.setScrollTrigger('#frappe');
       this.setScrollTrigger('#shake');
+      this.setScrollTrigger('#hotsandwich');
+      this.setScrollTrigger('#honeytoast');
+      this.setScrollTrigger('#potato');
+      this.setScrollTrigger('#miniparfait');
       this.setScrollTrigger('#topping');
       this.setScrollTrigger('#coupons');
       this.setScrollTrigger('#footer');

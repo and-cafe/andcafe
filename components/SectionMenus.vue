@@ -6,15 +6,15 @@
 
     <section class="px-2 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-        <menu-price title="HOT SANDWICH" color="bg-orange-500" v-bind:menuData="menus.hotsandwich" id="hotsandwich" />
-        <menu-price-item-list title="HOT TAPIOCA" color="bg-orange-500" v-bind:menuData="menus.hottapioca" id="hottapioca" />
-        <menu-price-item-list title="HOT DRINK" color="bg-orange-500" v-bind:menuData="menus.hotdrink" id="hotdrink" />
-
         <menu-price title="SPECIAL" color="bg-yellow-500" v-bind:menuData="menus.special" id="special" />
         <menu-price-item-list title="TAPIOCA" color="bg-yellow-500" v-bind:menuData="menus.tapioca" id="tapioca" />
         <menu-price-item-list title="FRAPPE" color="bg-yellow-500" v-bind:menuData="menus.frappe" id="frappe" />
         <menu-price-item-list title="SHAKE" color="bg-yellow-500" v-bind:menuData="menus.shake" id="shake" />
         <menu-price-item-list title="TOPPING" color="bg-yellow-500" v-bind:menuData="menus.topping" id="topping" />
+        <menu-price-item-list-hotsandwich title="HOT SANDWICH" color="bg-yellow-500" v-bind:menuData="menus.hotsandwich" id="hotsandwich" />
+        <menu-price title="HONEY TOAST" color="bg-yellow-500" v-bind:menuData="menus.honeytoast" id="honeytoast" />
+        <menu-price-potato title="FRENCH FRIES" color="bg-yellow-500" v-bind:menuData="menus.potato" id="potato" />
+        <menu-price-item-list title="MINI PARFAIT" color="bg-yellow-500" v-bind:menuData="menus.miniparfait" id="miniparfait" />
       </div>
     </section>
 

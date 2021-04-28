@@ -115,6 +115,10 @@ export default {
       this.setScrollTrigger('#frappe');
       this.setScrollTrigger('#shake');
       this.setScrollTrigger('#topping');
+      this.setScrollTrigger('#hotsandwich');
+      this.setScrollTrigger('#honeytoast');
+      this.setScrollTrigger('#potato');
+      this.setScrollTrigger('#miniparfait');
       this.setScrollTrigger('#footer');
     },
     calculateScrollY() {
