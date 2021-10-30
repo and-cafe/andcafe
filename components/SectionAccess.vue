@@ -7,8 +7,8 @@
         <dl class="flex flex-wrap m-4">
           <dt class="w-1/3 mb-2 font-bold md:w-1/4">住所</dt>
           <dd class="w-2/3 mb-2 md:w-3/4">
-            <div>鹿児島県出水市高尾野町大久保3756</div>
-            <div class="text-sm">(サウンドロケットさんの隣です)</div>
+            <div>鹿児島県出水市高尾野町大久保2174-2</div>
+            <div class="text-sm">(高尾野コメリの前です)</div>
             <a
               href="https://g.page/andcafe-shop?gm"
               target="_blank"
